@@ -8,7 +8,7 @@ Articulo evocarLSO(lista l,int codigo, int *exito);
 int perteneceLSO(lista l, int codigo);
 
 void altaLSO(lista *l, Articulo articulo1, int *exito){
-    printf("Ejecuta la alta\n");
+    printf("Ejecuta la alta version 2.0\n");
 }
 
 void bajaLSO(lista *l, char codigo1[10], int *exito){
