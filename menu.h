@@ -49,10 +49,12 @@ void menu(lista *l,int tipo){
                 break;
                 }
                 else{
-                    system("cls");
-                    printf("\n\t\tIngrese los datos del nuevo articulo\n\n\t\tCodigo del Producto (8 digitos): ");
-                    scanf("%10[^\n]",&codigoAlta);
-                    getchar();
+                    do{
+                        system("cls");
+                        printf("\n\t\tIngrese los datos del nuevo articulo\n\n\t\tCodigo del Producto (8 digitos): ");
+                        scanf("%10[^\n]",&codigoAlta);
+                        getchar();
+                    }while(strlen(codigoAlta)!=8);
                     strcpy(articulo1.codigo,codigoAlta);
                     //Ingresar tipo de articulo
                     printf("\n\t\tIngrese el tipo de articulo: ");

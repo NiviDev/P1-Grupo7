@@ -10,6 +10,7 @@ int perteneceLSOBB(lista l, int codigo);
 //Comentario
 void altaLSOBB(lista *l, Articulo articulo1, int *exito){
     printf("Ejecuta la alta de lista SOBB 2.0");
+    system("pause");
 }
 //probando1231asdasd
 
