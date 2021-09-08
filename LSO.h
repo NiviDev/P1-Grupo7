@@ -22,7 +22,7 @@ Articulo evocarLSO(lista l,int codigo, int *exito){
     return nulo;
 }
 
-int perteneceLSO(lista l, int codigo){
+int perteneceLSO(lista l, char codigo[10]){
     printf("Pertenece\n");
     return 0;
 }
