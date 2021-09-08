@@ -5,7 +5,8 @@
 void altaLSO(lista *l, Articulo articulo1, int *exito);
 void bajaLSO(lista *l, char codigo1[10], int *exito);
 Articulo evocarLSO(lista l,int codigo, int *exito);
-int perteneceLSO(lista l, int codigo);
+int perteneceLSO(lista l, char codigo[10]);
+int localizarLSO(lista l, char codigo[10], *exito);
 
 void altaLSO(lista *l, Articulo articulo1, int *exito){
     printf("Ejecuta la alta version 3.0\n");
