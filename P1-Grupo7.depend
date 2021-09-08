@@ -1,0 +1,34 @@
+# depslib dependency file v1.0
+1631047548 source:c:\users\zidre\desktop\p1-grupo7\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	"articulo.h"
+	"LSO.h"
+	"LSOBB.h"
+
+1631045227 c:\users\zidre\desktop\p1-grupo7\articulo.h
+
+1631047560 c:\users\zidre\desktop\p1-grupo7\lso.h
+
+1631047566 c:\users\zidre\desktop\p1-grupo7\lsobb.h
+
+1631115180 source:c:\users\vilur\downloads\p1-grupo7\p1-grupo7\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	"articulo.h"
+	"LSO.h"
+	"LSOBB.h"
+	"menu.h"
+
+1631115510 c:\users\vilur\downloads\p1-grupo7\p1-grupo7\articulo.h
+
+1631115574 c:\users\vilur\downloads\p1-grupo7\p1-grupo7\lso.h
+
+1631115574 c:\users\vilur\downloads\p1-grupo7\p1-grupo7\lsobb.h
+
+1631115800 c:\users\vilur\downloads\p1-grupo7\p1-grupo7\menu.h
+
