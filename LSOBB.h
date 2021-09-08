@@ -11,6 +11,7 @@ int perteneceLSOBB(lista l, int codigo);
 void altaLSOBB(lista *l, Articulo articulo1, int *exito){
     printf("Ejecuta la alta de lista SOBB 2.0");
 }
+//asdasdasda
 
 void bajaLSOBB(lista *l, char codigo1[10], int *exito){
     printf("Ejecuta la baja");
