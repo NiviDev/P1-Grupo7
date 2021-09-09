@@ -145,9 +145,9 @@ void menu(lista *l,int tipo){
                     printf("\n\t\tIngrese el codigo del producto que esta buscando.\n\t\tCodigo (8 digitos): ");
                     scanf("%10[^\n]",&codigoEvocar);
                     if(tipo == LSO)
-                        articulo2 = evocarLSO((*l),codigoEvocar,&exito);
+                        articulo2 = evocarLSO(l,codigoEvocar,&exito);
                     else{
-                        articulo2 = evocarLSOBB((*l),codigoEvocar,&exito);
+                        articulo2 = evocarLSOBB(l,codigoEvocar,&exito);
                     }
                     if(exito==1){
                         mostrarArticulo(articulo2);
@@ -177,13 +177,12 @@ void menu(lista *l,int tipo){
                     if(tipo = LSO)
                         exito = perteneceLSO((*l),codigoPertenece);
                     else
-                        exito = perteneceLSOBB((*l), codigoPertenece);
+                        localizarLSOBB(l,codigoPertenece,&exito);
                     if(exito)
                         printf("\n\t\tEl articulo con codigo %s SI se encuentra en el deposito\n",codigoPertenece);
                     else
                         printf("\n\t\tNo se encuentra el articulo con codigo %s.",codigoPertenece);
-                }
-                else{
+                }else{
                     system("cls");
                     printf("\n\t\tLista vacia\n");
                 }
@@ -214,5 +213,8 @@ void menu(lista *l,int tipo){
         }
     }
 }
+
+
+
 
 #endif // MENU_H_INCLUDED

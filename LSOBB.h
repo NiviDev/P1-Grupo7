@@ -4,9 +4,9 @@
 ///Prototipo
 int localizarLSOBB(lista *l, char codigo[10], int *exito);
 void altaLSOBB(lista *l, Articulo articulo, int *exito);
-void bajaLSOBB(lista *l, char codigo1[10], int *exito);
-Articulo evocarLSOBB(lista l,int codigo, int *exito);
-int perteneceLSOBB(lista l, int codigo);
+void bajaLSOBB(lista *l, char codigo[10], int *exito);
+Articulo evocarLSOBB(lista *l,char codigo[10], int *exito);
+
 
 ///Funciones
 int localizarLSOBB(lista *l, char codigo[10], int *exito){ //li inclusivo, ls exclusivo, derecha, derecha
@@ -66,18 +66,44 @@ void altaLSOBB(lista *l, Articulo articulo, int *exito){
 }
 
 
-void bajaLSOBB(lista *l, char codigo1[10], int *exito){
-    printf("Ejecuta la baja");
+void bajaLSOBB(lista *l, char codigo[10], int *exito){
+    int pos, aux=0,i;
+    pos=localizarLSOBB(l, codigo, exito);
+    if(*exito == 1){
+        mostrarArticulo(l->listaArticulo[pos]);
+        printf("\n\t\tDesea eliminar el articulo?\n\t\t1 - Eliminar\n\t\t2 - Volver\n\n\t\tOpcion: ");
+        scanf("%d",&aux);
+        getchar();
+        while(aux!=1&&aux!=2){
+            system("cls");
+            printf("\n\t\tOpcion invalido, ingrese nuevamente.\n\t\t1 - Eliminar\n\t\t2 - Volver\n\t\tOpcion: ");
+            scanf("%d",&aux);
+            getchar();
+        }
+        if(aux==1){ //decide eliminar
+            for(i=pos; i<l->ult;i++){
+                strcpy(l->listaArticulo[i].codigo,l->listaArticulo[i+1].codigo);
+                strcpy(l->listaArticulo[i].tipo,l->listaArticulo[i+1].tipo);
+                strcpy(l->listaArticulo[i].marca,l->listaArticulo[i+1].marca);
+                strcpy(l->listaArticulo[i].descripcion,l->listaArticulo[i+1].descripcion);
+                l->listaArticulo[i].precio = l->listaArticulo[i+1].precio;
+                l->listaArticulo[i].cantidad = l->listaArticulo[i+1].cantidad;
+            }
+            l->ult--;
+        }else{
+            *exito = 2; // no decide eliminar
+        }
+    }
 }
 
-Articulo evocarLSOBB(lista l,int codigo, int *exito){
-    Articulo nulo;
-    printf("Ejecuta el evocar\n");
-    return nulo;
+Articulo evocarLSOBB(lista *l,char codigo[10], int *exito){
+    int pos;
+    pos = localizarLSOBB(l, codigo, exito);
+    if(*exito == 1){
+        return l->listaArticulo[pos];
+    }
 }
 
-int perteneceLSOBB(lista l, int codigo){
-    printf("Pertenece\n");
-    return 0;
-}
+
+
 #endif // LSOBB_H_INCLUDED

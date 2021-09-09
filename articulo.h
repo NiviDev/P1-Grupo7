@@ -3,6 +3,8 @@
 
 #define MAX 250
 
+
+
 typedef struct{ // a todos le sumo 2 porque en el scanf cuando pulso enter(\n) ocupa 2 caracter.
     char codigo[10]; //a lo sumo 8
     char tipo[22]; //a lo sumo 20
@@ -22,9 +24,17 @@ lista *l;
 lista lso;
 lista lsobb;
 
-void mostrarArticulo(Articulo art){
-    printf("Muestra el Articulo\n");
+void mostrarArticulo(Articulo a){
+    printf("\n\t\t- Informacion del Articulo -");
+    printf("\n\t\tCodigo: %s",a.codigo);
+    printf("\n\t\tTipo: %s",a.tipo);
+    printf("\n\t\tMarca: %s",a.marca);
+    printf("\n\t\tDescripcion: %s",a.descripcion);
+    printf("\n\t\tPrecio: %f",a.precio);
+    printf("\n\t\tCantidad: %d\n",a.cantidad);
 }
+
+
 void mostrarTodo(lista l){
     printf("Muestra la lista\n");
 }
