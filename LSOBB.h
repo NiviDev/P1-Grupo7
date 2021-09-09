@@ -3,7 +3,7 @@
 
 ///Prototipo
 int localizarLSOBB(lista *l, char codigo[10], int *exito);
-void altaLSOBB(lista *l, Articulo articulo1, int *exito);
+void altaLSOBB(lista *l, Articulo articulo, int *exito);
 void bajaLSOBB(lista *l, char codigo1[10], int *exito);
 Articulo evocarLSOBB(lista l,int codigo, int *exito);
 int perteneceLSOBB(lista l, int codigo);
@@ -36,15 +36,33 @@ int localizarLSOBB(lista *l, char codigo[10], int *exito){ //li inclusivo, ls ex
         }
     }
     return t;
-
-
 }
 
 
 
-void altaLSOBB(lista *l, Articulo articulo1, int *exito){
-    printf("Ejecuta la alta de lista SOBB 2.0");
-    system("pause");
+void altaLSOBB(lista *l, Articulo articulo, int *exito){
+    int pos, i;
+    pos = localizarLSOBB(l,articulo.codigo,exito);
+    if(*exito == 0){
+        for(i=l->ult+1; i>=pos+1; i--){
+            strcpy(l->listaArticulo[i].codigo,l->listaArticulo[i-1].codigo);
+            strcpy(l->listaArticulo[i].tipo,l->listaArticulo[i-1].tipo);
+            strcpy(l->listaArticulo[i].marca,l->listaArticulo[i-1].marca);
+            strcpy(l->listaArticulo[i].descripcion,l->listaArticulo[i-1].descripcion);
+            l->listaArticulo[i].precio = l->listaArticulo[i-1].precio;
+            l->listaArticulo[i].cantidad = l->listaArticulo[i-1].cantidad;
+        }
+        l->ult++;
+        strcpy(l->listaArticulo[i].codigo, articulo.codigo);
+        strcpy(l->listaArticulo[i].tipo, articulo.tipo);
+        strcpy(l->listaArticulo[i].marca, articulo.marca);
+        strcpy(l->listaArticulo[i].descripcion, articulo.descripcion);
+        l->listaArticulo[i].precio = articulo.precio;
+        l->listaArticulo[i].cantidad = articulo.cantidad;
+        *exito = 1;
+    }else{
+        *exito = 0;
+    }
 }
 
 
