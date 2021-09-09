@@ -35,7 +35,14 @@ void mostrarArticulo(Articulo a){
 }
 
 
-void mostrarTodo(lista l){
-    printf("Muestra la lista\n");
+void mostrarTodo(lista *l){
+    system("cls");
+    int i=0;
+    for (i=0; i<=l->ult; i++) {
+        printf("\n\t\tPosicion en la lista: %d",i);
+        mostrarArticulo(l->listaArticulo[i]);
+        printf("\n-------------------------------------------\n");
+    }
+    //system("pause");
 }
 #endif // ARTICULO_H_INCLUDED

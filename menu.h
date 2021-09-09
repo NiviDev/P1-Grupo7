@@ -194,7 +194,7 @@ void menu(lista *l,int tipo){
             *********/
             case 5:{
                 if(l->ult > -1)
-                    mostrarTodo((*l));
+                    mostrarTodo(l);
                 else{
                     system("cls");
                     printf("\n\t\tLista vacia\n");
