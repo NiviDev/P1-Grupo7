@@ -16,8 +16,8 @@ int localizarLSOBB(lista *l, char codigo[10], int *exito){ //li inclusivo, ls ex
         while(li < (ls-1)){
         t=floor((li+ls)/2.0);
         /*
-        if(){ //Comparo strings
-            li=t; //buscado es mayor que t
+        if(){ //Si el elemento buscado es mayor que t
+            li=t;
         }else{
             ls=t;
         }
