@@ -36,6 +36,7 @@ void menu(lista *l,int tipo){
             fflush(stdin);
             scanf("%d",&opc);
         }
+        getchar();
         /*-----------------------Switch de opciones-----------------------*/
         switch(opc){
             /********
@@ -51,7 +52,7 @@ void menu(lista *l,int tipo){
                 else{
                     system("cls");
                     printf("\n\t\tIngrese los datos del nuevo articulo\n\n\t\tCodigo del Producto (8 digitos): ");
-                    scanf("%10[^\n]",&codigoAlta);
+                    scanf("%10[^\n]s",&codigoAlta);
                     getchar();
                     strcpy(articulo1.codigo,codigoAlta);
                     //Ingresar tipo de articulo
