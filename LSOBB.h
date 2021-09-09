@@ -17,6 +17,7 @@ int localizarLSOBB(lista *l, char codigo[10], int *exito){ //li inclusivo, ls ex
         t=floor((li+ls)/2.0);
         /*
         if(){ //Si el elemento buscado es mayor que t
+            // strcmp(l->listaArticulo[pos].codigo,codigo)<0    PROBAR DESPUES
             li=t;
         }else{
             ls=t;
@@ -73,12 +74,14 @@ void bajaLSOBB(lista *l, char codigo[10], int *exito){
         mostrarArticulo(l->listaArticulo[pos]);
         printf("\n\t\tDesea eliminar el articulo?\n\t\t1 - Eliminar\n\t\t2 - Volver\n\n\t\tOpcion: ");
         scanf("%d",&aux);
-        getchar();
+        //fflush(stdin);
+        //getchar();
         while(aux!=1&&aux!=2){
             system("cls");
             printf("\n\t\tOpcion invalido, ingrese nuevamente.\n\t\t1 - Eliminar\n\t\t2 - Volver\n\t\tOpcion: ");
             scanf("%d",&aux);
-            getchar();
+            //fflush(stdin);
+            //getchar();
         }
         if(aux==1){ //decide eliminar
             for(i=pos; i<l->ult;i++){

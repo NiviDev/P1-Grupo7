@@ -8,7 +8,7 @@ void menu(lista *l, int tipo);
 
 
 void menu(lista *l,int tipo){
-    int opc = 1, cantidadArt, exito;
+    int opc = 1, cantidadArt, exito = 0;
     char codigoAlta[10], codigoBaja[10], codigoEvocar[10], codigoPertenece[10],tipoArt[22],marcaArt[32],descripcionArt[102];
     float precioArt;
     Articulo articulo1, articulo2;
@@ -108,6 +108,15 @@ void menu(lista *l,int tipo){
                 if(l->ult > -1){
                     printf("\n\t\tIngrese el codigo del articulo que desea eliminar\n\t\tCodigo (8 digitos): ");
                     scanf("%10[^\n]",&codigoBaja);
+                    /*
+                    do{
+                        system("cls");
+                        printf("\n\t\tIngrese el codigo del articulo que desea eliminar\n\t\tCodigo (8 digitos): ");
+                        scanf("%10[^\n]",&codigoBaja);
+                        fflush(stdin);
+                        getchar();
+                    }while(strlen(codigoAlta)!=8);
+                    */
                     if(tipo == LSO)
                         bajaLSO(l,codigoBaja,&exito);
                     else
