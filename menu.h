@@ -52,6 +52,7 @@ void menu(lista *l,int tipo){
                     do{
                         system("cls");
                         printf("\n\t\tIngrese los datos del nuevo articulo\n\n\t\tCodigo del Producto (8 digitos): ");
+                        fflush(stdin);
                         scanf("%10[^\n]",&codigoAlta);
                         getchar();
                     }while(strlen(codigoAlta)!=8);
@@ -107,6 +108,7 @@ void menu(lista *l,int tipo){
             case 2:{
                 if(l->ult > -1){
                     printf("\n\t\tIngrese el codigo del articulo que desea eliminar\n\t\tCodigo (8 digitos): ");
+                    fflush(stdin);
                     scanf("%10[^\n]",&codigoBaja);
                     /*
                     do{
@@ -135,6 +137,7 @@ void menu(lista *l,int tipo){
                         else{
                             system("cls");
                             printf("\nNo se encuentra el articulo con ese codigo.\n");
+                            system("pause");
                         }
                     }
                     break;
@@ -152,6 +155,7 @@ void menu(lista *l,int tipo){
             case 3:{
                 if(l->ult > -1){
                     printf("\n\t\tIngrese el codigo del producto que esta buscando.\n\t\tCodigo (8 digitos): ");
+                    fflush(stdin);
                     scanf("%10[^\n]",&codigoEvocar);
                     if(tipo == LSO)
                         articulo2 = evocarLSO(l,codigoEvocar,&exito);
@@ -182,15 +186,16 @@ void menu(lista *l,int tipo){
             case 4:{
                 if(l->ult > -1){
                     printf("\n\t\tIngrese el codigo del articulo\n\t\tCodigo (8 digitos): ");
+                    fflush(stdin);
                     scanf("%10[^\n]",&codigoPertenece);
-                    if(tipo = LSO)
+                    if(tipo == LSO)
                         exito = perteneceLSO((*l),codigoPertenece);
                     else
                         localizarLSOBB(l,codigoPertenece,&exito);
                     if(exito)
                         printf("\n\t\tEl articulo con codigo %s SI se encuentra en el deposito\n",codigoPertenece);
                     else
-                        printf("\n\t\tNo se encuentra el articulo con codigo %s.",codigoPertenece);
+                        printf("\n\t\tNo se encuentra el articulo con codigo %s.\n",codigoPertenece);
                 }else{
                     system("cls");
                     printf("\n\t\tLista vacia\n");

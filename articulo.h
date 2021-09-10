@@ -37,7 +37,7 @@ void mostrarArticulo(Articulo a){
 
 void mostrarTodo(lista *l){
     system("cls");
-    int i=0;
+    int i;
     for (i=0; i<=l->ult; i++) {
         printf("\n\t\tPosicion en la lista: %d",i);
         mostrarArticulo(l->listaArticulo[i]);

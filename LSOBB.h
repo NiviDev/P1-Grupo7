@@ -10,29 +10,29 @@ Articulo evocarLSOBB(lista *l,char codigo[10], int *exito);
 
 ///Funciones
 int localizarLSOBB(lista *l, char codigo[10], int *exito){ //li inclusivo, ls exclusivo, derecha, derecha
-    int li = 0, ls = l->ult+1, t = 0, pos, i;
+    int li = 0, ls = l->ult+1, t = 0, i; // no se usa el pos, se usa el testigo
     *exito = 0;
-    if(l->ult != -1){
+    //if(l->ult != -1){
+    if(ls!=-1){
         while(li < (ls-1)){
-        t=floor((li+ls)/2.0);
-        /*
-        if(){ //Si el elemento buscado es mayor que t
+            t=floor((li+ls)/2.0);
+
+            if(strcmp(l->listaArticulo[t].codigo,codigo)<0){ //Si el elemento buscado es mayor que t
             // strcmp(l->listaArticulo[pos].codigo,codigo)<0    PROBAR DESPUES
-            li=t;
-        }else{
-            ls=t;
-        }
-        */
+                li=t;
+            }else{
+                ls=t;
+            }
+
         }
         t=li;
-        if(strcmp(l->listaArticulo[li].codigo,codigo)){
+        if(strcmp(l->listaArticulo[li].codigo,codigo)==0){
             *exito = 1;
         }else{
-            /*
-            if(){ // Si el elemento buscado es mayor que t
+            if(strcmp(l->listaArticulo[li].codigo,codigo)<0){ // Si el elemento buscado es mayor que t
                 t++;
             }
-            */
+
 
         }
     }
@@ -73,12 +73,14 @@ void bajaLSOBB(lista *l, char codigo[10], int *exito){
     if(*exito == 1){
         mostrarArticulo(l->listaArticulo[pos]);
         printf("\n\t\tDesea eliminar el articulo?\n\t\t1 - Eliminar\n\t\t2 - Volver\n\n\t\tOpcion: ");
+        fflush(stdin);
         scanf("%d",&aux);
         //fflush(stdin);
         //getchar();
         while(aux!=1&&aux!=2){
             system("cls");
             printf("\n\t\tOpcion invalido, ingrese nuevamente.\n\t\t1 - Eliminar\n\t\t2 - Volver\n\t\tOpcion: ");
+            fflush(stdin);
             scanf("%d",&aux);
             //fflush(stdin);
             //getchar();
