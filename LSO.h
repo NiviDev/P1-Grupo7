@@ -4,18 +4,19 @@
 ///Prototipo
 void altaLSO(lista *l, Articulo articulo1, int *exito);
 void bajaLSO(lista *l, char codigo1[10], int *exito);
-Articulo evocarLSO(lista l,int codigo, int *exito);
+Articulo evocarLSO(lista l,char codigo[10], int *exito);
 int perteneceLSO(lista l, char codigo[10]);
 int localizarLSO(lista l, char codigo[10],int *exito);
 
 
 int localizarLSO(lista l, char codigo[10],int *exito){
-    int pos=0, compare;
+    int pos=0;
     *exito = 0;
 
     while(strcmp(l.listaArticulo[pos].codigo,codigo)<0 )
         pos++;
     *exito = strcmp(l.listaArticulo[pos].codigo,codigo)==0;
+    return pos;
 }
 
 void altaLSO(lista *l, Articulo articulo1, int *exito){
@@ -74,14 +75,19 @@ void bajaLSO(lista *l, char codigo1[10], int *exito){
     }
 }
 
-Articulo evocarLSO(lista l,int codigo, int *exito){
+Articulo evocarLSO(lista l,char codigo[10], int *exito){
+    int pos;
     Articulo nulo;
-    printf("Ejecuta el evocar\n");
-    return nulo;
+    pos = localizarLSO(l,codigo,exito);
+    if(*exito == 1)
+        return l.listaArticulo[pos];
+    else
+        return nulo;
 }
 
 int perteneceLSO(lista l, char codigo[10]){
-    printf("Pertenece\n");
-    return 0;
+    int exito;
+    localizarLSO(l,codigo,&exito);
+    return exito;
 }
 #endif // LSO_H_INCLUDED
