@@ -13,7 +13,7 @@ int localizarLSO(lista l, char codigo[10],int *exito){
     int pos=0;
     *exito = 0;
 
-    while(strcmp(l.listaArticulo[pos].codigo,codigo)<0 )
+    while(strcasecmp(l.listaArticulo[pos].codigo,codigo)<0 )
         pos++;
     *exito = strcmp(l.listaArticulo[pos].codigo,codigo)==0;
     return pos;

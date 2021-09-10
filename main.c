@@ -10,6 +10,7 @@ Integrante: Wang Chih Wen
 #include <stdlib.h>
 #include <math.h>
 #include <string.h>
+#include <strings.h>
 #include "articulo.h"
 #include "LSO.h"
 #include "LSOBB.h"
