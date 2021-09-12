@@ -220,7 +220,7 @@ void menu(lista *l,int tipo){
               MEMORIZACION PREVIA
             *********/
             case 6:{
-                printf("Se realiza la memorizacion previa");
+                memorizacion(l, tipo);
                 system("pause");
                 break;
             }

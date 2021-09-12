@@ -45,4 +45,38 @@ void mostrarTodo(lista *l){
     }
     //system("pause");
 }
+
+void memorizacion(lista *l, int tipo){
+    int aux;
+    Articulo nuevo;
+    FILE *fp = NULL;
+    char* nombreArchivo = "Articulos.txt";
+
+    if((fp = fopen(nombreArchivo,"r")) == NULL){
+        printf("\n\n\t\tERROR: no se pudo abrir el archivo\n");
+        system("pause");
+    }
+    else{
+        while(!(feof(fp))){
+            fscanf(fp,"%[^\n]s",&nuevo.codigo);
+            fgetc(fp);
+            fscanf(fp,"%[^\n]s",&nuevo.tipo);
+            fgetc(fp);
+            fscanf(fp,"%[^\n]s",&nuevo.marca);
+            fgetc(fp);
+            fscanf(fp,"%[^\n]s",&nuevo.descripcion);
+            fgetc(fp);
+            fscanf(fp,"%f",&nuevo.precio);
+            fgetc(fp);
+            fscanf(fp,"%d",&nuevo.cantidad);
+            fgetc(fp);
+            if(tipo == 1)
+                altaLSO(l,nuevo,&aux);
+            else
+                altaLSOBB(l,nuevo,&aux);
+        }
+        fclose(fp);
+        printf("\n\n\t\tCarga exitosa\n");
+    }
+}
 #endif // ARTICULO_H_INCLUDED
