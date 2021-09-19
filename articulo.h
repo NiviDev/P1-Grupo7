@@ -32,10 +32,14 @@ void mostrarArticulo(Articulo art){
     printf("Cantidad en Deposito: %d\n",art.cantidad);
     printf("\n******************\n");
 }
-void mostrarTodo(lista l){
+void mostrarTodo(lista *l){
+    system("cls");
     int i;
-    for(i=0; i<=l.ult;i++)
-        mostrarArticulo(l.listaArticulo[i]);
+    for (i=0; i<=l->ult; i++) {
+        printf("\n\t\tPosicion en la lista: %d",i);
+        mostrarArticulo(l->listaArticulo[i]);
+        printf("\n-------------------------------------------\n");
+    }
 }
 
 void memorizacion(lista *l, int tipo){
