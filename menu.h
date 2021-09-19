@@ -19,7 +19,7 @@ void menu(lista *l,int tipo){
         else
             printf("\n\t\tLISTA SECUENCIAL ORDENADA BUSQUEDA BINARIA POR BISECCION\n\n");
         /*-----------------------Menu de opciones-----------------------*/
-        printf("\t\t1 - Ingreso de nuevos articulos.\n\n\t\t2 - Eliminacipn de articulos existentes.\n\n\t\t3 - Consulta de articulos.\n\n\t\t4 - Consulta deposito.\n\n\t\t5 - Mostrar Estructura.\n\n\t\t6 - Memorizacion Previa.\n\n\t\t7 - Volver.\n\n\n\t\tIngrese la opcion: ");
+        printf("\t\t1 - Ingreso de nuevos articulos.\n\n\t\t2 - Eliminacion de articulos existentes.\n\n\t\t3 - Consulta de articulos.\n\n\t\t4 - Consulta deposito.\n\n\t\t5 - Mostrar Estructura.\n\n\t\t6 - Memorizacion Previa.\n\n\t\t7 - Volver.\n\n\n\t\tIngrese la opcion: ");
         fflush(stdin);
         scanf("%d",&opc);
         if(opc==7)
@@ -32,7 +32,7 @@ void menu(lista *l,int tipo){
                 printf("\n\t\tLISTA SECUENCIAL ORDENADA\n\n");
             else
                 printf("\n\t\tLISTA SECUENCIAL ORDENADA BUSQUEDA BINARIA POR BISECCION\n\n");
-            printf("\t\t1 - Ingreso de nuevos articulos.\n\n\t\t2 - Eliminación de articulos existentes.\n\n\t\t3 - Consulta de artículos.\n\n\t\t4 - Consulta deposito.\n\n\t\t5 - Mostrar Estructura.\n\n\t\t6 - Memorización Previa.\n\n\t\t7 - Volver.\n\n\n\t\tIngrese la opcion: ");
+            printf("\t\t1 - Ingreso de nuevos articulos.\n\n\t\t2 - Eliminacion de articulos existentes.\n\n\t\t3 - Consulta de articulos.\n\n\t\t4 - Consulta deposito.\n\n\t\t5 - Mostrar Estructura.\n\n\t\t6 - Memorizacion Previa.\n\n\t\t7 - Volver.\n\n\n\t\tIngrese la opcion: ");
             fflush(stdin);
             scanf("%d",&opc);
         }
