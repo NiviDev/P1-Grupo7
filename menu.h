@@ -173,7 +173,7 @@ void menu(lista *l,int tipo){
                 if(l->ult > -1){
                     printf("\n\t\tIngrese el codigo del articulo\n\t\tCodigo (8 digitos): ");
                     scanf("%10[^\n]",&codigoPertenece);
-                    if(tipo = LSO)
+                    if(tipo == LSO)
                         exito = perteneceLSO((*l),codigoPertenece);
                     else
                         exito = perteneceLSOBB((*l), codigoPertenece);
