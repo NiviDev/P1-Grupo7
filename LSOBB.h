@@ -13,11 +13,13 @@ int localizarLSOBB(lista *l, char codigo[10], int *exito){ //inclusivo, exclusiv
     int li = 0, ls = l->ult+1, t = 0, i;
     *exito = 0;
     //if(l->ult != -1){
-    if(ls!=-1){
-        while(li < (ls-1)){
+    //if(ls!=-1){
+    if(ls!=0){
+        //while(li < (ls-1)){
+        while(li != (ls-1)){
             //t=floor((li+(ls-1))/2.0);
             t=floor((li+ls)/2.0);
-            if(strcmp(l->listaArticulo[t].codigo,codigo) < 0){ //Si el elemento buscado es mayor que t
+            if(strcasecmp(l->listaArticulo[t].codigo,codigo) <= 0){ //Si el elemento buscado es mayor que t
                 li=t;
             }else{
                 ls=t;
@@ -26,7 +28,7 @@ int localizarLSOBB(lista *l, char codigo[10], int *exito){ //inclusivo, exclusiv
         }
         t=ls-1;
         //if(strcmp(l->listaArticulo[ls-1].codigo,codigo) == 0){
-        if(strcmp(l->listaArticulo[t].codigo,codigo) == 0){
+        if(strcasecmp(l->listaArticulo[t].codigo,codigo) == 0){
             *exito = 1;
         }else{
             //if(strcmp(l->listaArticulo[li].codigo,codigo) < 0 || strcmp(l->listaArticulo[li].codigo,"zzzzzzzz") < 0){
@@ -41,8 +43,8 @@ int localizarLSOBB(lista *l, char codigo[10], int *exito){ //inclusivo, exclusiv
             if(t==-1){
                 t++;
             }else{
-                if(strcmp(l->listaArticulo[t].codigo,codigo) < 0){
-                //if(strcmp(l->listaArticulo[t].codigo,codigo) < 0){
+                //if(strcmp(l->listaArticulo[ls-1].codigo,codigo) < 0){
+                if(strcasecmp(l->listaArticulo[t].codigo,codigo) < 0){
                     t++;
                 }
             }
