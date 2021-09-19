@@ -191,7 +191,7 @@ void menu(lista *l,int tipo){
                     if(tipo == LSO)
                         exito = perteneceLSO((*l),codigoPertenece);
                     else
-                        localizarLSOBB(l,codigoPertenece,&exito);
+                        exito = perteneceLSOBB(l,codigoPertenece);
                     if(exito)
                         printf("\n\t\tEl articulo con codigo %s SI se encuentra en el deposito\n",codigoPertenece);
                     else

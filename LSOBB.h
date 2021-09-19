@@ -6,7 +6,7 @@ int localizarLSOBB(lista *l, char codigo[10], int *exito);
 void altaLSOBB(lista *l, Articulo articulo, int *exito);
 void bajaLSOBB(lista *l, char codigo[10], int *exito);
 Articulo evocarLSOBB(lista *l,char codigo[10], int *exito);
-
+int perteneceLSOBB(lista *l, char codigo[10]);
 
 ///Funciones
 int localizarLSOBB(lista *l, char codigo[10], int *exito){ //inclusivo, exclusivo, derecha, derecha
@@ -25,7 +25,8 @@ int localizarLSOBB(lista *l, char codigo[10], int *exito){ //inclusivo, exclusiv
 
         }
         t=ls-1;
-        if(strcmp(l->listaArticulo[ls-1].codigo,codigo) == 0){
+        //if(strcmp(l->listaArticulo[ls-1].codigo,codigo) == 0){
+        if(strcmp(l->listaArticulo[t].codigo,codigo) == 0){
             *exito = 1;
         }else{
             //if(strcmp(l->listaArticulo[li].codigo,codigo) < 0 || strcmp(l->listaArticulo[li].codigo,"zzzzzzzz") < 0){
@@ -40,7 +41,7 @@ int localizarLSOBB(lista *l, char codigo[10], int *exito){ //inclusivo, exclusiv
             if(t==-1){
                 t++;
             }else{
-                if(strcmp(l->listaArticulo[ls-1].codigo,codigo) < 0){
+                if(strcmp(l->listaArticulo[t].codigo,codigo) < 0){
                 //if(strcmp(l->listaArticulo[t].codigo,codigo) < 0){
                     t++;
                 }
@@ -122,6 +123,10 @@ Articulo evocarLSOBB(lista *l,char codigo[10], int *exito){
     }
 }
 
-
+int perteneceLSOBB(lista *l, char codigo[10]){
+    int exito;
+    localizarLSOBB(l,codigo,&exito);
+    return exito;
+}
 
 #endif // LSOBB_H_INCLUDED
