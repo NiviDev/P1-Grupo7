@@ -43,7 +43,6 @@ void mostrarTodo(lista *l){
         mostrarArticulo(l->listaArticulo[i]);
         printf("\n-------------------------------------------\n");
     }
-    //system("pause");
 }
 
 void memorizacion(lista *l, int tipo){

@@ -110,15 +110,6 @@ void menu(lista *l,int tipo){
                     printf("\n\t\tIngrese el codigo del articulo que desea eliminar\n\t\tCodigo (8 digitos): ");
                     fflush(stdin);
                     scanf("%10[^\n]",&codigoBaja);
-                    /*
-                    do{
-                        system("cls");
-                        printf("\n\t\tIngrese el codigo del articulo que desea eliminar\n\t\tCodigo (8 digitos): ");
-                        scanf("%10[^\n]",&codigoBaja);
-                        fflush(stdin);
-                        getchar();
-                    }while(strlen(codigoAlta)!=8);
-                    */
                     if(tipo == LSO)
                         bajaLSO(l,codigoBaja,&exito);
                     else
