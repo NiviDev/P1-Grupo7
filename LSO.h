@@ -51,6 +51,7 @@ void bajaLSO(lista *l, char codigo1[10], int *exito){
     if(*exito==1){
         mostrarArticulo(l->listaArticulo[pos]);
         printf("\n\t\tDesea eliminar el articulo?\n\t\t1 - Eliminar\n\t\t2 - Volver\n\n\t\tOpcion: ");
+        getchar();
         scanf("%d",&aux);
         getchar();
         while(aux != 1 && aux != 2){
