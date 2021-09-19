@@ -50,6 +50,13 @@ void menu(lista *l,int tipo){
                 break;
                 }
                 else{
+                    do{
+                        system("cls");
+                        printf("\n\t\tIngrese los datos del nuevo articulo\n\n\t\tCodigo del Producto (8 digitos): ");
+                        fflush(stdin);
+                        scanf("%10[^\n]",&codigoAlta);
+                        getchar();
+                    }while(strlen(codigoAlta)!=8);
                     system("cls");
                     printf("\n\t\tIngrese los datos del nuevo articulo\n\n\t\tCodigo del Producto (8 digitos): ");
                     scanf("%10[^\n]s",&codigoAlta);
@@ -146,7 +153,7 @@ void menu(lista *l,int tipo){
                     if(tipo == LSO)
                         articulo2 = evocarLSO((*l),codigoEvocar,&exito);
                     else{
-                        articulo2 = evocarLSOBB((*l),codigoEvocar,&exito);
+                        articulo2 = evocarLSOBB(l,codigoEvocar,&exito);
                     }
                     if(exito==1){
                         mostrarArticulo(articulo2);
@@ -176,7 +183,7 @@ void menu(lista *l,int tipo){
                     if(tipo == LSO)
                         exito = perteneceLSO((*l),codigoPertenece);
                     else
-                        exito = perteneceLSOBB((*l), codigoPertenece);
+                         exito = perteneceLSOBB(l,codigoPertenece);
                     if(exito)
                         printf("\n\t\tEl articulo con codigo %s SI se encuentra en el deposito\n",codigoPertenece);
                     else
