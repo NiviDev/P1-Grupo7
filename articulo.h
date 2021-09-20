@@ -28,7 +28,7 @@ void mostrarArticulo(Articulo art){
     printf("Tipo de Articulo: %s\n",art.tipo);
     printf("Marca: %s\n",art.marca);
     printf("Descripcion: %s\n",art.descripcion);
-    printf("Precio: $%f\n",art.precio);
+    printf("Precio: $%.2f\n",art.precio);
     printf("Cantidad en Deposito: %d\n",art.cantidad);
     printf("\n******************\n");
 }
