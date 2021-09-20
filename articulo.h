@@ -53,7 +53,7 @@ void memorizacion(lista *l, int tipo){
         system("pause");
     }
     else{
-        while(!(feof(fp))){
+        while(!(feof(fp)) && l->ult+1 != MAX){
             fscanf(fp,"%[^\n]s",&nuevo.codigo);
             fgetc(fp);
             fscanf(fp,"%[^\n]s",&nuevo.tipo);
