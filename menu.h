@@ -57,10 +57,6 @@ void menu(lista *l,int tipo){
                         scanf("%10[^\n]",&codigoAlta);
                         getchar();
                     }while(strlen(codigoAlta)!=8);
-                    system("cls");
-                    printf("\n\t\tIngrese los datos del nuevo articulo\n\n\t\tCodigo del Producto (8 digitos): ");
-                    scanf("%10[^\n]s",&codigoAlta);
-                    getchar();
                     strcpy(articulo1.codigo,codigoAlta);
                     //Ingresar tipo de articulo
                     printf("\n\t\tIngrese el tipo de articulo: ");
@@ -188,7 +184,7 @@ void menu(lista *l,int tipo){
                     if(exito)
                         printf("\n\t\tEl articulo con codigo %s SI se encuentra en el deposito\n",codigoPertenece);
                     else
-                        printf("\n\t\tNo se encuentra el articulo con codigo %s.",codigoPertenece);
+                        printf("\n\t\tNo se encuentra el articulo con codigo %s.\n",codigoPertenece);
                 }
                 else{
                     system("cls");
