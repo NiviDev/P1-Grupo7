@@ -132,6 +132,7 @@ void menu(lista *l,int tipo){
                         else{
                             system("cls");
                             printf("\nNo se encuentra el articulo con ese codigo.\n");
+                            system("pause");
                         }
                     }
                     break;
