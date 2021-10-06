@@ -45,7 +45,7 @@ void menu(lista *l,int tipo){
             case 1:{
                 if(l->ult+1 == MAX){
                 system("cls");
-                printf("\n\t\tNo hay suficiente espacio para cargar una nueva persona\n");
+                printf("\n\t\tNo hay suficiente espacio para cargar un nuevo articulo\n");
                 system("pause");
                 break;
                 }
