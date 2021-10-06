@@ -166,7 +166,7 @@ void menu(lista *l,int tipo){
                 else{
                     system("cls");
                     printf("\n\t\tLista vacia\n");
-                    printf("pause");
+                    system("pause");
                     break;
                 }
             }
